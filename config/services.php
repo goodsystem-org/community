@@ -30,4 +30,11 @@ return [
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
 
+    'wechat_web' => [
+        'client_id' => env('WECHAT_WEB_APP_ID'),
+        'client_secret' => env('WECHAT_WEB_APP_SECRET'),
+        'redirect' => env('WECHAT_WEB_CALLBACK_URL'),
+        'scopes' => preg_split('/,/', env('WECHAT_WEB_SCOPES'), null, PREG_SPLIT_NO_EMPTY), // can not use explode, see vlucas/phpdotenv#175
+        'union_id_with' => preg_split('/,/', env('WECHAT_WEB_UNION_ID_WITH'), null, PREG_SPLIT_NO_EMPTY),
+    ],
 ];
