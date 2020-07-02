@@ -2,11 +2,13 @@
 
 namespace App;
 
+use Illuminate\Auth\Notifications\VerifyEmail;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
-class User extends Authenticatable
+class User extends Authenticatable implements MustVerifyEmail
+
 {
     use Notifiable;
 
@@ -36,4 +38,10 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    // Should be that one person vs many users, but don't want to change users table, so use belongsToMany instead.
+    public function people()
+    {
+        return $this->belongsToMany(Person::class);
+    }
 }
