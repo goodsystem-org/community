@@ -4,8 +4,8 @@
     <!--
         example: display user name and avitar
     <div class="mt-1 mx-3 text-gray-500 text-sm pt-4 border-t opacity-75 hover:opacity-100">
-        <img src="{{ auth()->user()->firstSocialAvatar() }}" class="inline-block w-6 h-6 rounded-full border mr-1"
-             title="Signed in as user : {{ auth()->user()->name }}"
+        <img src="{ { auth()->user()->firstSocialAvatar() } }" class="inline-block w-6 h-6 rounded-full border mr-1"
+             title="Signed in as user : {  { auth()->user()->name } }"
         >
         <span>{{ auth()->user()->name }}</span>
     </div>

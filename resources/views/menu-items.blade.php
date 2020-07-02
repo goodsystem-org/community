@@ -6,8 +6,8 @@
         example: display user name and avitar
         <a href="/me" class="ml-8 text-gray-500 text-sm h-8 pb-2 pt-1 px-1 border rounded-full opacity-75 hover:opacity-100">
         {{-- @click="userInfoOpen = !userInfoOpen" --}}
-        <img src="{{ auth()->user()->firstSocialAvatar() }}" class="inline-block w-6 h-6 rounded-full border mr-1"
-             title="Signed in as user : {{ auth()->user()->name }}"
+        <img src="{ { auth()->user()->firstSocialAvatar() } }" class="inline-block w-6 h-6 rounded-full border mr-1"
+             title="Signed in as user : { { auth()->user()->name } }"
         >
         <span>{{ auth()->user()->name }}</span>
     </a>
